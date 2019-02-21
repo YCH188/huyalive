@@ -86,8 +86,11 @@ class HuyaLive():
             if len(anchor_status) == 0 and flag:
                 print("---get into self prepare")
                 # 进行录屏
-                self.prepare()
-                flag = False
+                try:
+                    self.prepare()
+                    flag = False
+                except:
+                    pass
             elif len(anchor_status) != 0:
                 flag = True
 
